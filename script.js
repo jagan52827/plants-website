@@ -1,7 +1,7 @@
-document.getElementById('identifyButton').addEventListener('click', () => {
-  const fileInput = document.getElementById('imageUpload');
-  const file = fileInput.files[0];
+let uploadedImageBase64 = null;
 
+document.getElementById('uploadButton').addEventListener('click', () => {
+  const file = document.getElementById('imageUpload').files[0];
   if (!file) {
     alert("Please select an image first.");
     return;
@@ -9,18 +9,38 @@ document.getElementById('identifyButton').addEventListener('click', () => {
 
   const reader = new FileReader();
   reader.onload = () => {
-    const base64 = reader.result;
-    document.getElementById('plantImage').src = base64;
-
-    identifyPlant(base64); // Simulated or real API call
+    uploadedImageBase64 = reader.result;
+    document.getElementById('plantImage').src = uploadedImageBase64;
+    document.getElementById('previewImageContainer').classList.remove('hidden');
   };
   reader.readAsDataURL(file);
 });
 
-function identifyPlant(base64) {
-  // Simulate AI result for now (replace with real API later)
-  document.getElementById('commonName').innerText = "Neem";
-  document.getElementById('scientificName').innerText = "Azadirachta indica";
-  document.getElementById('usage').innerText = "Used for its antibacterial and medicinal properties.";
+document.getElementById('identifyButton').addEventListener('click', () => {
+  if (!uploadedImageBase64) {
+    alert("Please upload an image first.");
+    return;
+  }
+
+  // Simulated AI Output – replace with real API later
+  const common = "Tulsi";
+  const scientific = "Ocimum tenuiflorum";
+  const uses = [
+    "Used in Ayurvedic medicine for immunity.",
+    "Helps relieve cold and cough symptoms.",
+    "Natural antioxidant and antibacterial."
+  ];
+
+  document.getElementById('commonName').innerText = common;
+  document.getElementById('scientificName').innerText = scientific;
+
+  const usesList = document.getElementById('usesList');
+  usesList.innerHTML = '';
+  uses.forEach(use => {
+    const li = document.createElement('li');
+    li.textContent = use;
+    usesList.appendChild(li);
+  });
+
   document.getElementById('result').classList.remove('hidden');
-}
+});
