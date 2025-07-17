@@ -2,28 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>AI Botanical Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Botanical AI Survey</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="hero">
+  <div class="background-text">CSP12</div>
+
+  <div class="container">
     <h1>🌿 Botanical AI Survey</h1>
-    <p>Upload a plant image and let AI identify it for you</p>
+    <p>Upload a plant image and let AI identify it</p>
 
     <input type="file" id="imageUpload" accept="image/*" />
     <br /><br />
-    <button id="identifyButton">Upload & Identify Plant</button>
+    <button id="uploadButton">Upload Image</button>
+    <button id="identifyButton">Identify Plant</button>
+
+    <div id="previewImageContainer" class="hidden">
+      <h3>Uploaded Image:</h3>
+      <img id="plantImage" src="" alt="Uploaded Plant" />
+    </div>
+
+    <div id="result" class="hidden">
+      <h2>🌱 Plant Identification</h2>
+      <p><strong>Common Name:</strong> <span id="commonName"></span></p>
+      <p><strong>Scientific Name:</strong> <span id="scientificName"></span></p>
+      <p><strong>Uses:</strong></p>
+      <ul id="usesList"></ul>
+    </div>
   </div>
 
-  <div id="result" class="hidden">
-    <h2>🌱 Identified Plant</h2>
-    <img id="plantImage" src="" alt="Plant Image"/>
-    <p><strong>Common Name:</strong> <span id="commonName"></span></p>
-    <p><strong>Scientific Name:</strong> <span id="scientificName"></span></p>
-    <p><strong>Uses:</strong> <span id="usage"></span></p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <footer>
+    <p>&copy; 2025 CSP12 Botanical Surv
