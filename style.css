@@ -1,71 +1,16 @@
-/* Global Styling */
 body {
   font-family: 'Georgia', serif;
-  background: #f0f7f4;
   margin: 0;
   padding: 0;
   text-align: center;
   position: relative;
-}
+  color: #2f2f2f;
 
-/* Watermark Text */
-.background-text {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-  color: rgba(200, 200, 200, 0.1);
-  z-index: 0;
-  user-select: none;
-  pointer-events: none;
-}
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+    url('https://images.unsplash.com/photo-1606813903012-77e3919a9c63?auto=format&fit=crop&w=1950&q=80');
 
-/* Main Content */
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-  margin: 80px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-/* Image Preview */
-#plantImage {
-  max-width: 100%;
-  margin-top: 15px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-/* Buttons */
-button {
-  padding: 12px 24px;
-  margin: 10px 10px;
-  font-size: 16px;
-  background-color: #4b9150;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover {
-  background-color: #3d7b41;
-}
-
-/* Footer */
-footer {
-  margin-top: 50px;
-  padding: 20px;
-  background: #eaf1ea;
-  font-size: 14px;
-  color: #444;
-}
-
-.hidden {
-  display: none;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
