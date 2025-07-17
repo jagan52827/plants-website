@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Botanical AI Survey</title>
+  <title>AI Botanical Survey</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="hero">
-    <h1>AI Botanical Survey</h1>
-    <p>Upload a plant photo to identify it automatically</p>
+    <h1>🌿 Botanical AI Survey</h1>
+    <p>Upload a plant image and let AI identify it for you</p>
+
     <input type="file" id="imageUpload" accept="image/*" />
+    <br /><br />
+    <button id="identifyButton">Upload & Identify Plant</button>
   </div>
+
   <div id="result" class="hidden">
-    <img id="plantImage" src="" alt="Plant"/>
-    <h2 id="commonName"></h2>
-    <h3 id="scientificName"></h3>
-    <p id="usage"></p>
+    <h2>🌱 Identified Plant</h2>
+    <img id="plantImage" src="" alt="Plant Image"/>
+    <p><strong>Common Name:</strong> <span id="commonName"></span></p>
+    <p><strong>Scientific Name:</strong> <span id="scientificName"></span></p>
+    <p><strong>Uses:</strong> <span id="usage"></span></p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
