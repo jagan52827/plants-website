@@ -1,41 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Botanical Survey</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Botanical AI Survey</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🌿 Botanical Survey</h1>
-    <p>Please upload a plant image and fill in its details</p>
-
-    <form id="plantForm">
-      <label>Plant Image:</label>
-      <input type="file" id="imageUpload" accept="image/*" required />
-
-      <label>Plant Name:</label>
-      <input type="text" id="plantName" placeholder="e.g. Tulsi" required />
-
-      <label>Scientific Name:</label>
-      <input type="text" id="scientificName" placeholder="e.g. Ocimum tenuiflorum" required />
-
-      <label>Uses / Description:</label>
-      <textarea id="plantUses" placeholder="e.g. Used in traditional medicine for colds..." required></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <div id="previewSection" class="hidden">
-      <h2>Submitted Plant Info</h2>
-      <img id="previewImage" src="" alt="Uploaded Plant Image" />
-      <p><strong>Common Name:</strong> <span id="previewName"></span></p>
-      <p><strong>Scientific Name:</strong> <span id="previewScientific"></span></p>
-      <p><strong>Uses:</strong> <span id="previewUses"></span></p>
-    </div>
+  <div class="hero">
+    <h1>AI Botanical Survey</h1>
+    <p>Upload a plant photo to identify it automatically</p>
+    <input type="file" id="imageUpload" accept="image/*" />
   </div>
-
+  <div id="result" class="hidden">
+    <img id="plantImage" src="" alt="Plant"/>
+    <h2 id="commonName"></h2>
+    <h3 id="scientificName"></h3>
+    <p id="usage"></p>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
