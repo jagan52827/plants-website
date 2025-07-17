@@ -1,28 +1,26 @@
-// script.js
-const input = document.getElementById('imageUpload');
-input.addEventListener('change', async () => {
-  const file = input.files[0];
-  if (!file) return;
+document.getElementById('identifyButton').addEventListener('click', () => {
+  const fileInput = document.getElementById('imageUpload');
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Please select an image first.");
+    return;
+  }
 
   const reader = new FileReader();
   reader.onload = () => {
-    document.getElementById('plantImage').src = reader.result;
-    identifyPlant(reader.result);
+    const base64 = reader.result;
+    document.getElementById('plantImage').src = base64;
+
+    identifyPlant(base64); // Simulated or real API call
   };
   reader.readAsDataURL(file);
 });
 
-async function identifyPlant(base64) {
-  // Call AI API like plant.id
-  const response = await fetch('/api/identify', { 
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ image: base64 })
-  });
-  const data = await response.json();
-  // Example response: { common: "", scientific: "", uses: "" }
-  document.getElementById('commonName').innerText = data.common;
-  document.getElementById('scientificName').innerText = data.scientific;
-  document.getElementById('usage').innerText = data.uses;
+function identifyPlant(base64) {
+  // Simulate AI result for now (replace with real API later)
+  document.getElementById('commonName').innerText = "Neem";
+  document.getElementById('scientificName').innerText = "Azadirachta indica";
+  document.getElementById('usage').innerText = "Used for its antibacterial and medicinal properties.";
   document.getElementById('result').classList.remove('hidden');
 }
